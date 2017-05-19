@@ -4,6 +4,7 @@ const app = express();
 const request = require('request');
 const path = require('path');
 const config = require('./config');
+const port = process.env.PORT || 1337;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -88,6 +89,6 @@ app.get('/mapkey', (req,res) => {
   res.send(config.mapKey());
 });
 
-app.listen(1337, () => {
+app.listen(port, () => {
   console.log('app listening on port 1337!')
 });
