@@ -1,0 +1,16 @@
+/findUVIndex:
+  description: POST call to get the prediction for the current location
+  post:
+    body:
+      application/json:
+        type: object
+        properties:
+          zipcode: Int,
+          timestamp: timestamp
+    responses:
+      200:
+        body:
+          application/json:
+            value: Int,
+            risk: String,
+            recommendation: String
