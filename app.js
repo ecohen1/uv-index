@@ -9,7 +9,7 @@ const port = process.env.PORT || 1337;
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/build',express.static(path.join(__dirname,'vr/build')));
 
 
 // Add headers
@@ -87,6 +87,10 @@ app.post('/findUVIndex', [findUVIndex]);
 
 app.get('/mapkey', (req,res) => {
   res.send(config.mapKey());
+});
+
+app.get('/anything/:google', (req,res) => {
+  res.send(req.body.google);
 });
 
 app.listen(port, () => {
