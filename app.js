@@ -9,7 +9,7 @@ const port = process.env.PORT || 1337;
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname,'public')));
+app.use('/assets',express.static(path.join(__dirname,'public')));
 
 
 // Add headers
@@ -54,7 +54,7 @@ const findUVIndex = (req, response) => {
   // Step1: Get the request and process it
   let UVIndex;
   let risk;
-  let url = 'http://api.wunderground.com/api/' + config.apiKey() + '/hourly10day/q/' + req.body.zipcode + '.json';
+  let url = 'https://api.wunderground.com/api/' + config.apiKey() + '/hourly10day/q/' + req.body.zipcode + '.json';
 
   // Process the epoch time sent to us and find the date
   let date = new Date(req.body.timestamp).getDate();
