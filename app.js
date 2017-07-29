@@ -9,7 +9,7 @@ const port = process.env.PORT || 1337;
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/build',express.static(path.join(__dirname,'vr/build')));
+app.use(express.static(path.join(__dirname,'public')));
 
 
 // Add headers
