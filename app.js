@@ -9,7 +9,7 @@ const port = process.env.PORT || 1337;
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/assets',express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'public')));
 
 
 // Add headers
