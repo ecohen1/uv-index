@@ -3,7 +3,8 @@ function apiKey() {
 }
 
 function mapKey() {
-  return 'AIzaSyB2PN2DWBME3STMNFugV___yXb4q57pECg';
+  // return 'AIzaSyB2PN2DWBME3STMNFugV___yXb4q57pECg';
+  return 'AIzaSyCYxw9BIlfALgvNYNU-WakuW1NbBehfChg';
 }
 
 module.exports = {apiKey, mapKey}
